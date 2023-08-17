@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.mycasino10.view.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_recordsFragment"
+            app:destination="@id/recordsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_complexityGameFragment"
+            app:destination="@id/complexityGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordsFragment"
+        android:name="com.example.mycasino10.view.fragments.RecordsFragment"
+        android:label="fragment_records"
+        tools:layout="@layout/fragment_records" >
+        <action
+            android:id="@+id/action_recordsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.mycasino10.view.fragments.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" >
+        <action
+            android:id="@+id/action_rulesFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/complexityGameFragment"
+        android:name="com.example.mycasino10.view.fragments.ComplexityGameFragment"
+        android:label="fragment_complexity_game"
+        tools:layout="@layout/fragment_complexity_game" >
+        <action
+            android:id="@+id/action_complexityGameFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_complexityGameFragment_to_gameQuestionsCardsFragment"
+            app:destination="@id/gameQuestionsCardsFragment" />
+        <action
+            android:id="@+id/action_complexityGameFragment_to_gameSearchCardFragment"
+            app:destination="@id/gameSearchCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameSearchCardFragment"
+        android:name="com.example.mycasino10.view.fragments.GameSearchCardFragment"
+        android:label="fragment_game_search_card"
+        tools:layout="@layout/fragment_game_search_card" >
+        <action
+            android:id="@+id/action_gameSearchCardFragment_to_complexityGameFragment"
+            app:destination="@id/complexityGameFragment" />
+        <action
+            android:id="@+id/action_gameSearchCardFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_gameSearchCardFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameQuestionsCardsFragment"
+        android:name="com.example.mycasino10.view.fragments.GameQuestionsCardsFragment"
+        android:label="fragment_game_questions_cards"
+        tools:layout="@layout/fragment_game_questions_cards" >
+        <action
+            android:id="@+id/action_gameQuestionsCardsFragment_to_complexityGameFragment"
+            app:destination="@id/complexityGameFragment" />
+        <action
+            android:id="@+id/action_gameQuestionsCardsFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_gameQuestionsCardsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.example.mycasino10.view.fragments.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_gameQuestionsCardsFragment"
+            app:destination="@id/gameQuestionsCardsFragment" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_gameSearchCardFragment"
+            app:destination="@id/gameSearchCardFragment" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_complexityGameFragment"
+            app:destination="@id/complexityGameFragment" />
+    </fragment>
+</navigation>

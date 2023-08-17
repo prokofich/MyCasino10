@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#3a3a38"
+    tools:context=".view.fragments.RecordsFragment">
+
+    <TextView
+        android:id="@+id/id_records_tv_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="RECORDS"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/unkempt"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_records_button_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="back"
+        android:fontFamily="@font/unkempt"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@drawable/background_button_records"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toTopOf="@id/id_records_tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/id_records_tv_title"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.23"/>
+
+
+    <TextView
+        android:id="@+id/id_records_tv_search_easy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#ffcb00"
+        android:fontFamily="@font/unkempt"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/id_records_tv_search_middle"
+        app:layout_constraintWidth_percent="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_title"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_search_easy"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@color/black"/>
+
+
+
+    <TextView
+        android:id="@+id/id_records_tv_search_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#ffcb00"
+        android:fontFamily="@font/unkempt"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/id_records_tv_search_hard"
+        app:layout_constraintWidth_percent="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_search_easy"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_search_middle"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/id_records_tv_search_hard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#ffcb00"
+        android:fontFamily="@font/unkempt"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/id_records_tv_time_easy"
+        app:layout_constraintWidth_percent="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_search_middle"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_search_hard"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/id_records_tv_time_easy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#ffcb00"
+        android:fontFamily="@font/unkempt"
+        android:textSize="33sp"
+        app:layout_constraintBottom_toTopOf="@id/id_records_tv_time_middle"
+        app:layout_constraintWidth_percent="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_search_hard"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_time_easy"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/id_records_tv_time_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#ffcb00"
+        android:fontFamily="@font/unkempt"
+        android:textSize="33sp"
+        app:layout_constraintBottom_toTopOf="@id/id_records_tv_time_hard"
+        app:layout_constraintWidth_percent="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_time_easy"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_time_middle"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/id_records_tv_time_hard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/unkempt"
+        android:gravity="center"
+        android:textColor="#ffcb00"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_time_middle"
+        app:layout_constraintWidth_percent="1.0" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_records_tv_time_hard"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@color/black"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

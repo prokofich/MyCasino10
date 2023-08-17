@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ffcb00"
+    tools:context=".view.fragments.ComplexityGameFragment">
+
+    <TextView
+        android:id="@+id/id_complexity_tv_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="choose the difficulty level"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/unkempt"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_complexity_button_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="back"
+        android:fontFamily="@font/unkempt"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/background_button_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toTopOf="@id/id_complexity_tv_title"
+        app:layout_constraintBottom_toBottomOf="@id/id_complexity_tv_title"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.23"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_complexity_button_easy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        android:text="easy"
+        android:textSize="50sp"
+        android:fontFamily="@font/unkempt"
+        android:background="@drawable/background_button_menu"
+        app:layout_constraintBottom_toTopOf="@id/id_complexity_button_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_complexity_tv_title"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintHeight_percent="0.1"/>
+
+    <TextView
+        android:id="@+id/id_complexity_tv_desc_easy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/unkempt"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_complexity_button_easy"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.07"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_complexity_button_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        android:text="middle"
+        android:textSize="50sp"
+        android:fontFamily="@font/unkempt"
+        android:background="@drawable/background_button_menu"
+        app:layout_constraintBottom_toTopOf="@id/id_complexity_button_hard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_complexity_button_easy"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintHeight_percent="0.1"/>
+
+    <TextView
+        android:id="@+id/id_complexity_tv_desc_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/unkempt"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_complexity_button_middle"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.07"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_complexity_button_hard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        android:text="hard"
+        android:textSize="50sp"
+        android:fontFamily="@font/unkempt"
+        android:background="@drawable/background_button_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_complexity_button_middle"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintHeight_percent="0.1"/>
+
+    <TextView
+        android:id="@+id/id_complexity_tv_desc_hard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/unkempt"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_complexity_button_hard"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.07"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

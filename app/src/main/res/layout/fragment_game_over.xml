@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#3a3a38"
+    tools:context=".view.fragments.GameOverFragment">
+
+    <TextView
+        android:id="@+id/id_gameover_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/unkempt"
+        android:textSize="75sp"
+        android:text="Game over"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.15"/>
+
+    <View
+        android:id="@+id/id_gameover_view1"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:background="#ffcb00"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_gameover_tv_title"/>
+
+    <TextView
+        android:id="@+id/id_gameover_tv_result_desc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/unkempt"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/id_gameover_tv_current_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_gameover_view1"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <TextView
+        android:id="@+id/id_gameover_tv_current_result"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/unkempt"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/id_gameover_tv_record"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_gameover_tv_result_desc"/>
+
+    <TextView
+        android:id="@+id/id_gameover_tv_record"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/unkempt"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@id/id_gameover_button_restart"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_gameover_tv_current_result"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_gameover_button_restart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="RESTART"
+        android:textSize="40sp"
+        android:fontFamily="@font/unkempt"
+        android:textStyle="bold"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/background_button_records"
+        app:layout_constraintBottom_toTopOf="@id/id_gameover_button_menu"
+        app:layout_constraintTop_toBottomOf="@id/id_gameover_tv_record"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_gameover_button_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="menu"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/unkempt"
+        android:background="@drawable/background_button_records"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_gameover_button_restart"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".view.fragments.GameQuestionsCardsFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_game_questions_img" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_game_questions_button_pause"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.2"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_pause"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/id_game_questions_iv_timer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_timer"
+        android:backgroundTint="#ffcb00"
+        app:layout_constraintBottom_toBottomOf="@id/id_game_questions_button_pause"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/id_game_questions_tv_time"
+        app:layout_constraintTop_toTopOf="@id/id_game_questions_button_pause"/>
+
+    <TextView
+        android:id="@+id/id_game_questions_tv_time"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintBottom_toBottomOf="@id/id_game_questions_button_pause"
+        app:layout_constraintStart_toEndOf="@id/id_game_questions_iv_timer"
+        app:layout_constraintEnd_toStartOf="@id/id_game_questions_button_pause"
+        app:layout_constraintTop_toTopOf="@id/id_game_questions_button_pause"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/id_game_questions_cs_pause"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.6">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:id="@+id/id_game_question_button_continue"
+            android:layout_height="0dp"
+            android:text="RESUME"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/unkempt"
+            android:background="@drawable/background_button_records"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent="0.2"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="finish"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/unkempt"
+            android:id="@+id/id_game_question_button_finish_menu"
+            android:background="@drawable/background_button_records"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/id_game_questions_cs_game"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_game_questions_button_pause">
+
+        <TextView
+            android:id="@+id/id_game_question_tv_level"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:text="level 1"
+            android:fontFamily="@font/unkempt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent="0.07"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/id_game_question_iv_card1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_tv_level"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.22"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:id="@+id/id_game_question_tv_card1"
+            android:layout_height="0dp"
+            android:background="@drawable/background_button_records"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@id/id_game_question_iv_card1"
+            app:layout_constraintEnd_toEndOf="@id/id_game_question_iv_card2"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_iv_card1"
+
+            app:layout_constraintHeight_percent="0.05"/>
+
+        <ImageView
+            android:id="@+id/id_game_question_iv_card2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/id_game_question_iv_card1"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_tv_level"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.22"/>
+
+
+
+
+
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/id_game_question_iv_card3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_tv_card1"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.22"/>
+
+
+
+        <ImageView
+            android:id="@+id/id_game_question_iv_card4"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toStartOf="@id/id_game_question_iv_card3"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_tv_card1"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintHeight_percent="0.22"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_button_records"
+            android:textSize="25sp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:id="@+id/id_game_question_tv_card4"
+            app:layout_constraintStart_toStartOf="@id/id_game_question_iv_card4"
+            app:layout_constraintEnd_toEndOf="@id/id_game_question_iv_card3"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_iv_card4"
+            app:layout_constraintHeight_percent="0.05"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_game_question_button_up_win"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="The cards on top are stronger"
+            android:background="@drawable/background_button_game"
+            app:layout_constraintBottom_toTopOf="@id/id_game_question_button_nichya_win"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/id_game_question_button_down_win"
+            app:layout_constraintWidth_percent="0.45"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_tv_card4"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_game_question_button_down_win"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="The cards from below are stronger"
+            android:background="@drawable/background_button_game"
+            app:layout_constraintBottom_toTopOf="@id/id_game_question_button_nichya_win"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintStart_toEndOf="@id/id_game_question_button_up_win"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_tv_card4"
+            app:layout_constraintWidth_percent="0.45" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_game_question_button_nichya_win"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@color/black"
+            android:text="draw"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:background="@drawable/background_button_game"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_game_question_button_up_win"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
