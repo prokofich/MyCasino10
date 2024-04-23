@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.MAIN
+import com.example.mycasino10.model.constant.MAIN
 import kotlinx.android.synthetic.main.fragment_records.*
 
 class RecordsFragment : Fragment() {
@@ -26,21 +26,21 @@ class RecordsFragment : Fragment() {
 
         //выход в меню
         id_records_button_back.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_recordsFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_recordsFragment_to_menuFragment)
         }
 
         //обработка нажатия на кнопку НАЗАД(выход в меню)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            MAIN.navController.navigate(R.id.action_recordsFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_recordsFragment_to_menuFragment)
         }
 
         //показ всех рекордов
-        id_records_tv_search_easy.text = "find the card,easy:${MAIN.getRecordSearchEasy()}"
+        id_records_tv_search_easy.text   = "find the card,easy:${MAIN.getRecordSearchEasy()}"
         id_records_tv_search_middle.text = "find the card,middle:${MAIN.getRecordSearchMiddle()}"
-        id_records_tv_search_hard.text = "find the card,hard:${MAIN.getRecordSearchHard()}"
-        id_records_tv_time_easy.text = "answer correctly,easy:${MAIN.getRecordQuestionEasy()}"
-        id_records_tv_time_middle.text = "answer correctly,middle:${MAIN.getRecordQuestionMiddle()}"
-        id_records_tv_time_hard.text = "answer correctly,hard:${MAIN.getRecordQuestionHard()}"
+        id_records_tv_search_hard.text   = "find the card,hard:${MAIN.getRecordSearchHard()}"
+        id_records_tv_time_easy.text     = "answer correctly,easy:${MAIN.getRecordQuestionEasy()}"
+        id_records_tv_time_middle.text   = "answer correctly,middle:${MAIN.getRecordQuestionMiddle()}"
+        id_records_tv_time_hard.text     = "answer correctly,hard:${MAIN.getRecordQuestionHard()}"
 
     }
 

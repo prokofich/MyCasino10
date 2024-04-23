@@ -1,4 +1,4 @@
-package com.example.mycasino10.constant
+package com.example.mycasino10.model.constant
 
 const val NAME_MY_SERVER = "http://37.27.9.28/17/"
 

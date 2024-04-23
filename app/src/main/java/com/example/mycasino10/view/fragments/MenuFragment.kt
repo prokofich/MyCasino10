@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import com.bumptech.glide.Glide
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.*
+import com.example.mycasino10.model.constant.GAME
+import com.example.mycasino10.model.constant.GAME_QUESTION
+import com.example.mycasino10.model.constant.GAME_SEARCH
+import com.example.mycasino10.model.constant.MAIN
+import com.example.mycasino10.model.constant.url_image_emblema
 import kotlinx.android.synthetic.main.fragment_menu.*
 
 class MenuFragment : Fragment() {
@@ -30,7 +34,7 @@ class MenuFragment : Fragment() {
 
         //переход к рекордам
         id_menu_tv_records.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_menuFragment_to_recordsFragment)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_recordsFragment)
         }
 
         //выход из игры
@@ -42,14 +46,14 @@ class MenuFragment : Fragment() {
         id_menu_button_game_search.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(GAME, GAME_SEARCH)
-            MAIN.navController.navigate(R.id.action_menuFragment_to_complexityGameFragment,bundle)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_complexityGameFragment,bundle)
         }
 
         //перейти к выбору уровня игры
         id_menu_button_game_time.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(GAME, GAME_QUESTION)
-            MAIN.navController.navigate(R.id.action_menuFragment_to_complexityGameFragment,bundle)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_complexityGameFragment,bundle)
         }
 
         //обработка нажатия на кнопку НАЗАД(выход из игры)
@@ -61,18 +65,16 @@ class MenuFragment : Fragment() {
         id_menu_tv_game_tutorial_search.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(GAME, GAME_SEARCH)
-            MAIN.navController.navigate(R.id.action_menuFragment_to_rulesFragment,bundle)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_rulesFragment,bundle)
         }
 
         //перейти на экран правил игры
         id_menu_tv_game_tutorial_time.setOnClickListener {
             val bundle = Bundle()
             bundle.putString(GAME, GAME_QUESTION)
-            MAIN.navController.navigate(R.id.action_menuFragment_to_rulesFragment,bundle)
+            MAIN.navController?.navigate(R.id.action_menuFragment_to_rulesFragment,bundle)
         }
 
     }
-
-
 
 }

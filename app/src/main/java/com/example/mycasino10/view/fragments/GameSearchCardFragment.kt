@@ -12,7 +12,24 @@ import androidx.activity.addCallback
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.*
+import com.example.mycasino10.model.constant.CHECK_RECORD
+import com.example.mycasino10.model.constant.COMPLEXITY
+import com.example.mycasino10.model.constant.COMPLEXITY_EASY
+import com.example.mycasino10.model.constant.COMPLEXITY_HARD
+import com.example.mycasino10.model.constant.COMPLEXITY_MIDDLE
+import com.example.mycasino10.model.constant.CURRENT_RESULT
+import com.example.mycasino10.model.constant.GAME
+import com.example.mycasino10.model.constant.GAME_SEARCH
+import com.example.mycasino10.model.constant.MAIN
+import com.example.mycasino10.model.constant.NAME_MY_SERVER
+import com.example.mycasino10.model.constant.TIME_LONG
+import com.example.mycasino10.model.constant.TIME_SHORT
+import com.example.mycasino10.model.constant.attempt_search_easy
+import com.example.mycasino10.model.constant.attempt_search_hard
+import com.example.mycasino10.model.constant.attempt_search_middle
+import com.example.mycasino10.model.constant.listAllCard
+import com.example.mycasino10.model.constant.url_image_background
+import com.example.mycasino10.model.constant.url_obratnaya_storona
 import kotlinx.android.synthetic.main.fragment_game_search_card.*
 import kotlinx.coroutines.*
 
@@ -55,7 +72,7 @@ class GameSearchCardFragment : Fragment() {
 
         //завершение+выход в меню
         id_game_search_button_finish_menu.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_gameSearchCardFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_gameSearchCardFragment_to_menuFragment)
         }
 
         //выход из паузы(продолжение игры)
@@ -85,7 +102,7 @@ class GameSearchCardFragment : Fragment() {
         loadCardsInImageView()
 
         //показ загаданной карты
-        loadImage(NAME_MY_SERVER+hiddenCard,id_game_search_iv_card10)
+        loadImage(NAME_MY_SERVER +hiddenCard,id_game_search_iv_card10)
 
         //проверка карты
         id_game_search_iv_card1.setOnClickListener {
@@ -175,15 +192,9 @@ class GameSearchCardFragment : Fragment() {
     //функция загрузки количества попыток
     private fun loadCountAttempts(){
         when(requireArguments().getString(COMPLEXITY)){
-            COMPLEXITY_EASY -> {
-                countAttempts = attempt_search_easy
-            }
-            COMPLEXITY_MIDDLE -> {
-                countAttempts = attempt_search_middle
-            }
-            COMPLEXITY_HARD -> {
-                countAttempts = attempt_search_hard
-            }
+            COMPLEXITY_EASY   -> { countAttempts = attempt_search_easy   }
+            COMPLEXITY_MIDDLE -> { countAttempts = attempt_search_middle }
+            COMPLEXITY_HARD   -> { countAttempts = attempt_search_hard   }
         }
     }
 
@@ -207,7 +218,7 @@ class GameSearchCardFragment : Fragment() {
             countAttempts-=1
             id_game_search_tv_time.text = "$countAttempts attempts"
 
-            loadImage(NAME_MY_SERVER+list9Cards[index],id)
+            loadImage(NAME_MY_SERVER +list9Cards[index],id)
 
             if(list9Cards[index]==hiddenCard){
                 //угадал
@@ -221,7 +232,7 @@ class GameSearchCardFragment : Fragment() {
                 loadCardsInImageView()
                 getNewCards()
                 setHiddenCard()
-                loadImage(NAME_MY_SERVER+hiddenCard,id_game_search_iv_card10)
+                loadImage(NAME_MY_SERVER + hiddenCard,id_game_search_iv_card10)
                 enabledImageView(true)
             }else{
                 if(countAttempts==0){
@@ -233,7 +244,7 @@ class GameSearchCardFragment : Fragment() {
                     bundle.putInt(CURRENT_RESULT,currentLevel)
                     when(requireArguments().getString(COMPLEXITY)){
                         COMPLEXITY_EASY -> {
-                            if(MAIN.getRecordSearchEasy()<currentLevel){
+                            if(MAIN.getRecordSearchEasy() < currentLevel){
                                 bundle.putBoolean(CHECK_RECORD,true)
                                 MAIN.setRecordSearchEasy(currentLevel)
                             }else{
@@ -241,7 +252,7 @@ class GameSearchCardFragment : Fragment() {
                             }
                         }
                         COMPLEXITY_MIDDLE -> {
-                            if(MAIN.getRecordSearchMiddle()<currentLevel){
+                            if(MAIN.getRecordSearchMiddle() < currentLevel){
                                 bundle.putBoolean(CHECK_RECORD,true)
                                 MAIN.setRecordSearchMiddle(currentLevel)
                             }else{
@@ -249,7 +260,7 @@ class GameSearchCardFragment : Fragment() {
                             }
                         }
                         COMPLEXITY_HARD -> {
-                            if(MAIN.getRecordSearchHard()<currentLevel){
+                            if(MAIN.getRecordSearchHard() < currentLevel){
                                 bundle.putBoolean(CHECK_RECORD,true)
                                 MAIN.setRecordSearchHard(currentLevel)
                             }else{
@@ -258,7 +269,7 @@ class GameSearchCardFragment : Fragment() {
                         }
                     }
                     delay(3000)
-                    MAIN.navController.navigate(R.id.action_gameSearchCardFragment_to_gameOverFragment,bundle)
+                    MAIN.navController?.navigate(R.id.action_gameSearchCardFragment_to_gameOverFragment,bundle)
                 }
             }
         }

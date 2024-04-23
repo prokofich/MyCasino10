@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.lifecycle.ViewModelProvider
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.GAME
-import com.example.mycasino10.constant.GAME_QUESTION
-import com.example.mycasino10.constant.GAME_SEARCH
-import com.example.mycasino10.constant.MAIN
+import com.example.mycasino10.model.constant.GAME
+import com.example.mycasino10.model.constant.GAME_QUESTION
+import com.example.mycasino10.model.constant.GAME_SEARCH
+import com.example.mycasino10.model.constant.MAIN
 import com.example.mycasino10.viewmodel.RulesViewModel
 import kotlinx.android.synthetic.main.fragment_rules.*
 
@@ -34,18 +34,18 @@ class RulesFragment : Fragment() {
         val rulesViewModel = ViewModelProvider(this)[RulesViewModel::class.java]
 
         //показ полученного от сервера ответа
-        rulesViewModel.Text.observe(viewLifecycleOwner){ TEXT ->
-            id_rules_tv_description.text = TEXT.body()!!.text
+        rulesViewModel.text.observe(viewLifecycleOwner){
+            id_rules_tv_description.text = it.body()!!.text
         }
 
         //выход в меню
         id_rules_button_back.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_rulesFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_rulesFragment_to_menuFragment)
         }
 
         //обработка нажатия на кнопку НАЗАД(выход в меню)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            MAIN.navController.navigate(R.id.action_rulesFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_rulesFragment_to_menuFragment)
         }
 
         //отпрака запроса на сервер

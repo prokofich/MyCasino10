@@ -1,4 +1,4 @@
-package com.example.mycasino10.constant
+package com.example.mycasino10.model.constant
 
 //emblema game
 const val url_image_emblema = "http://37.27.9.28/17/emblema_card.png"

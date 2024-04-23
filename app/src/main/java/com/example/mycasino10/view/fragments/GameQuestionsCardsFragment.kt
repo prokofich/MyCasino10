@@ -12,7 +12,22 @@ import androidx.activity.addCallback
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.*
+import com.example.mycasino10.model.constant.CHECK_RECORD
+import com.example.mycasino10.model.constant.COMPLEXITY
+import com.example.mycasino10.model.constant.COMPLEXITY_EASY
+import com.example.mycasino10.model.constant.COMPLEXITY_HARD
+import com.example.mycasino10.model.constant.COMPLEXITY_MIDDLE
+import com.example.mycasino10.model.constant.CURRENT_RESULT
+import com.example.mycasino10.model.constant.GAME
+import com.example.mycasino10.model.constant.GAME_QUESTION
+import com.example.mycasino10.model.constant.MAIN
+import com.example.mycasino10.model.constant.NAME_MY_SERVER
+import com.example.mycasino10.model.constant.listAllCard
+import com.example.mycasino10.model.constant.mapAllCard
+import com.example.mycasino10.model.constant.time_question_easy
+import com.example.mycasino10.model.constant.time_question_hard
+import com.example.mycasino10.model.constant.time_question_middle
+import com.example.mycasino10.model.constant.url_image_background
 import kotlinx.android.synthetic.main.fragment_game_questions_cards.*
 import kotlinx.coroutines.*
 
@@ -83,7 +98,7 @@ class GameQuestionsCardsFragment : Fragment() {
 
         id_game_question_button_finish_menu.setOnClickListener {
             //отмена корутин
-            MAIN.navController.navigate(R.id.action_gameQuestionsCardsFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_gameQuestionsCardsFragment_to_menuFragment)
         }
         ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -121,10 +136,9 @@ class GameQuestionsCardsFragment : Fragment() {
             .into(id)
     }
 
-    //функция показа всплыающего сообщения
-    private fun showToast(message:String){
-        Toast.makeText(requireContext(),message, Toast.LENGTH_LONG).show()
-    }
+    //функция показа всплывающего сообщения
+    private fun showToast(message:String) = Toast.makeText(requireContext(),message, Toast.LENGTH_LONG).show()
+
 
     //функция получения новых карт
     private fun getNewCards(){
@@ -133,24 +147,18 @@ class GameQuestionsCardsFragment : Fragment() {
 
     //показ всех загруженных карт
     private fun loadAllCardsInImageView(){
-        loadImage(NAME_MY_SERVER+list4Cards[0],id_game_question_iv_card1)
-        loadImage(NAME_MY_SERVER+list4Cards[1],id_game_question_iv_card2)
-        loadImage(NAME_MY_SERVER+list4Cards[2],id_game_question_iv_card3)
-        loadImage(NAME_MY_SERVER+list4Cards[3],id_game_question_iv_card4)
+        loadImage(NAME_MY_SERVER +list4Cards[0],id_game_question_iv_card1)
+        loadImage(NAME_MY_SERVER +list4Cards[1],id_game_question_iv_card2)
+        loadImage(NAME_MY_SERVER +list4Cards[2],id_game_question_iv_card3)
+        loadImage(NAME_MY_SERVER +list4Cards[3],id_game_question_iv_card4)
     }
 
     //функция загрузки количества попыток
     private fun loadTimeSeconds(){
         when(requireArguments().getString(COMPLEXITY)){
-            COMPLEXITY_EASY -> {
-                timeSeconds = time_question_easy
-            }
-            COMPLEXITY_MIDDLE -> {
-                timeSeconds = time_question_middle
-            }
-            COMPLEXITY_HARD -> {
-                timeSeconds = time_question_hard
-            }
+            COMPLEXITY_EASY   -> { timeSeconds = time_question_easy   }
+            COMPLEXITY_MIDDLE -> { timeSeconds = time_question_middle }
+            COMPLEXITY_HARD   -> { timeSeconds = time_question_hard   }
         }
     }
 
@@ -230,7 +238,7 @@ class GameQuestionsCardsFragment : Fragment() {
                     }
                 }
                 delay(3000)
-                MAIN.navController.navigate(R.id.action_gameQuestionsCardsFragment_to_gameOverFragment,bundle)
+                MAIN.navController?.navigate(R.id.action_gameQuestionsCardsFragment_to_gameOverFragment,bundle)
             }
         }
     }

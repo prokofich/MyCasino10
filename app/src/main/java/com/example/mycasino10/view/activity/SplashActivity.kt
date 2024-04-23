@@ -9,10 +9,10 @@ import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.APP_PREFERENCES
-import com.example.mycasino10.constant.ID
-import com.example.mycasino10.constant.url_image_background
-import com.example.mycasino10.constant.url_image_emblema
+import com.example.mycasino10.model.constant.APP_PREFERENCES
+import com.example.mycasino10.model.constant.ID
+import com.example.mycasino10.model.constant.url_image_background
+import com.example.mycasino10.model.constant.url_image_emblema
 import com.example.mycasino10.viewmodel.SplashViewModel
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.*
@@ -28,8 +28,8 @@ class SplashActivity : AppCompatActivity() {
 
         val splashViewModel = ViewModelProvider(this)[SplashViewModel::class.java]
 
-        var namePhone = Build.MODEL.toString()
-        var locale = Locale.getDefault().getDisplayLanguage().toString()
+        val namePhone = Build.MODEL.toString()
+        val locale = Locale.getDefault().displayLanguage.toString()
         var id = ""
 
         if (getMyId()!=""){
@@ -66,42 +66,39 @@ class SplashActivity : AppCompatActivity() {
     }
 
     //выход по кнопку назад
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         job.cancel()
         finishAffinity()
     }
 
-    fun getMyId():String{
-        var preferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(ID,"")
-        return preferences ?: ""
+    private fun getMyId() : String {
+        return getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).getString(ID,"").toString()
     }
 
-    fun setMyId(id:String){
-        var preferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-        preferences.edit()
-            .putString(ID,id)
-            .apply()
+    private fun setMyId(id : String) {
+        getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE).edit().putString(ID,id).apply()
     }
 
-    fun goToMainPush() {
+    private fun goToMainPush() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
             startActivity(Intent(this@SplashActivity,MainActivity::class.java))
         }
     }
 
-    fun goToMainNoPush() {
+    private fun goToMainNoPush() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
             startActivity(Intent(this@SplashActivity,MainActivity::class.java))
         }
     }
 
-    fun goToWeb(url:String) {
+   private fun goToWeb(url:String) {
         CoroutineScope(Dispatchers.Main).launch {
             delay(3000)
-            var intent = Intent(this@SplashActivity,WebViewActivity::class.java)
+            val intent = Intent(this@SplashActivity,WebViewActivity::class.java)
             intent.putExtra("url",url)
             startActivity(intent)
         }

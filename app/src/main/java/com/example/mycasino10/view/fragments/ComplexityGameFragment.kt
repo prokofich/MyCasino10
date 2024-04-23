@@ -8,7 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
 import com.example.mycasino10.R
-import com.example.mycasino10.constant.*
+import com.example.mycasino10.model.constant.COMPLEXITY
+import com.example.mycasino10.model.constant.COMPLEXITY_EASY
+import com.example.mycasino10.model.constant.COMPLEXITY_HARD
+import com.example.mycasino10.model.constant.COMPLEXITY_MIDDLE
+import com.example.mycasino10.model.constant.GAME
+import com.example.mycasino10.model.constant.GAME_QUESTION
+import com.example.mycasino10.model.constant.GAME_SEARCH
+import com.example.mycasino10.model.constant.MAIN
+import com.example.mycasino10.model.constant.attempt_search_easy
+import com.example.mycasino10.model.constant.attempt_search_hard
+import com.example.mycasino10.model.constant.attempt_search_middle
+import com.example.mycasino10.model.constant.time_question_easy
+import com.example.mycasino10.model.constant.time_question_hard
+import com.example.mycasino10.model.constant.time_question_middle
 import kotlinx.android.synthetic.main.fragment_complexity_game.*
 
 class ComplexityGameFragment : Fragment() {
@@ -27,25 +40,25 @@ class ComplexityGameFragment : Fragment() {
         //показ описания уровней
         when(requireArguments().getString(GAME)){
             GAME_SEARCH -> {
-                id_complexity_tv_desc_easy.text = "you will have $attempt_search_easy attempts"
+                id_complexity_tv_desc_easy.text   = "you will have $attempt_search_easy attempts"
                 id_complexity_tv_desc_middle.text = "you will have $attempt_search_middle attempts"
-                id_complexity_tv_desc_hard.text = "you will have $attempt_search_hard attempts"
+                id_complexity_tv_desc_hard.text   = "you will have $attempt_search_hard attempts"
             }
             GAME_QUESTION -> {
-                id_complexity_tv_desc_easy.text = "you are given $time_question_easy sec"
+                id_complexity_tv_desc_easy.text   = "you are given $time_question_easy sec"
                 id_complexity_tv_desc_middle.text = "you are given $time_question_middle sec"
-                id_complexity_tv_desc_hard.text = "you are given $time_question_hard sec"
+                id_complexity_tv_desc_hard.text   = "you are given $time_question_hard sec"
             }
         }
 
         //выход в меню
         id_complexity_button_back.setOnClickListener {
-            MAIN.navController.navigate(R.id.action_complexityGameFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_complexityGameFragment_to_menuFragment)
         }
 
         //обработка нажатия на кнопку НАЗАД(выход из игры)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            MAIN.navController.navigate(R.id.action_complexityGameFragment_to_menuFragment)
+            MAIN.navController?.navigate(R.id.action_complexityGameFragment_to_menuFragment)
         }
 
 
@@ -74,11 +87,9 @@ class ComplexityGameFragment : Fragment() {
 
     private fun goToGame(bundle: Bundle){
         when(requireArguments().getString(GAME)){
-            GAME_SEARCH -> { MAIN.navController.navigate(R.id.action_complexityGameFragment_to_gameSearchCardFragment,bundle) }
-            GAME_QUESTION -> { MAIN.navController.navigate(R.id.action_complexityGameFragment_to_gameQuestionsCardsFragment,bundle) }
+            GAME_SEARCH   -> { MAIN.navController?.navigate(R.id.action_complexityGameFragment_to_gameSearchCardFragment,bundle) }
+            GAME_QUESTION -> { MAIN.navController?.navigate(R.id.action_complexityGameFragment_to_gameQuestionsCardsFragment,bundle) }
         }
     }
-
-
 
 }
